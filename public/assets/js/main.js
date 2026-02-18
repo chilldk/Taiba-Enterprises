@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#tslider").carouFredSel({circular:!0,infinite:!1,responsive:!0,scroll:{items:1,fx:"fade"},pagination:{container:"#t_navigation",anchorBuilder:function(n){return'<a href="#'+n+'"></a>'}}}),$("#menu_icon").click(function(){return $("#nav_menu").toggleClass("show_menu"),!1})});

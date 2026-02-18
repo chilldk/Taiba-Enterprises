@@ -1,0 +1,101 @@
+.form-control {
+  padding: 6px 12px !important;
+}
+
+.bootstrap-table {
+  padding: 20px !important;
+}
+
+tbody td {
+  font-size: 13px;
+}
+
+.fixed-table-loading {
+  display: none !important;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.dropdown-menu-end .dropdown-item {
+    font-size: 13px;
+}
+
+.columns .btn,
+.export .btn, .dropup .btn {
+    background-color: transparent !important;
+    border: 1px solid #e9dee0 !important;
+    box-shadow: none !important;
+    color: #000 !important;
+    padding: 7px 10px !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.columns .btn:hover,
+.export .btn:hover,
+.dropup .btn:hover
+{
+    background-color: rgba(16, 18, 20, 0.08) !important;
+    border-color: #d3c8ca !important;
+    color: #000 !important;
+}
+.columns i,
+.export i {
+    font-size: 1.1rem;
+    vertical-align: middle;
+    color: inherit !important;
+}
+
+.fixed-table-pagination .pagination li a {
+    color: #444 !important;
+    background-color: transparent !important;
+    border: 1.4px solid #e0dede !important;
+    padding: 6px 12px !important;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.fixed-table-pagination .pagination li a:hover {
+    background-color: rgba(16, 18, 20, 0.07) !important;
+    border-color: #d3cfcf !important;
+    color: #000 !important;
+}
+
+.fixed-table-pagination .pagination li.active a {
+    background-color: #0d6efd !important;
+    color: #fff !important;
+    border-color: #0d6efd !important;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(13, 110, 253, 0.3);
+}
+
+.fixed-table-pagination .pagination li.page-pre a,
+.fixed-table-pagination .pagination li.page-next a {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.fixed-table-pagination .page-list button {
+    background-color: transparent !important;
+    border: 1.4px solid #e0dede !important;
+    color: #444 !important;
+    font-size: 15px;
+}
+
+.fixed-table-pagination .page-list button:hover {
+    background-color: rgba(13, 110, 253, 0.05) !important;
+    border-color: #bfc9f3 !important;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none !important;
+    font-size: 15px;
+}
+.search-input{
+    font-size: 13px !important;
+    padding: 9px !important;
+}

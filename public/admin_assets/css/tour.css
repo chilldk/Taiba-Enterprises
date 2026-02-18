@@ -1,0 +1,171 @@
+/* Dropdown Checkbox */
+.itemClass {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    height: 44px;
+    font-size: 11px;
+}
+
+.dropdown-checkbox-btn {
+    position: relative;
+    text-align: start;
+    display: block;
+    width: 100%;
+    font-size: 11px;
+    padding: 11px 16px;
+    line-height: 1.5;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.dropdown-checkbox-content {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+}
+
+.dropdown-checkbox-content label {
+    display: block;
+    margin: 4px;
+    padding: 8px;
+    font-size: 13px;
+    color: #6c757d;
+}
+
+.dropdown-checkbox-content input[type="checkbox"] {
+    margin-right: 8px;
+    opacity: 0; /* hide raw checkbox in dropdown only */
+}
+
+.label-checkbox:hover {
+    cursor: pointer;
+    background-color: #e9ecef;
+}
+
+/* Search Input */
+#myInput-my {
+    height: 44px;
+    font-size: 11px;
+}
+
+#myInput-my:focus {
+    outline: 3px solid #e9ecef;
+}
+
+.dropdown-content-my {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 180px;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #dee2e6;
+    z-index: 1000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-content-my a {
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 13px;
+}
+
+.dropdown-my a:hover {
+    background-color: #e9ecef;
+}
+
+.far {
+    cursor: pointer;
+}
+
+.stuName {
+    border: none;
+}
+
+/* Table Column Widths */
+.table th, .table td {
+    vertical-align: middle;
+}
+
+.table-general th:nth-child(1), .table-general td:nth-child(1) { width: 10%; }
+.table-general th:nth-child(2), .table-general td:nth-child(2) { width: 10%; }
+.table-general th:nth-child(3), .table-general td:nth-child(3) { width: 12%; }
+.table-general th:nth-child(4), .table-general td:nth-child(4) { width: 12%; }
+.table-general th:nth-child(5), .table-general td:nth-child(5) { width: 16%; }
+.table-general th:nth-child(6), .table-general td:nth-child(6) { width: 16%; }
+.table-general th:nth-child(7), .table-general td:nth-child(7) { width: 28%; }
+
+.table-school th:nth-child(1), .table-school td:nth-child(1) { width: 15%; }
+.table-school th:nth-child(2), .table-school td:nth-child(2) { width: 25%; }
+.table-school th:nth-child(3), .table-school td:nth-child(3) { width: 20%; }
+.table-school th:nth-child(4), .table-school td:nth-child(4) { width: 15%; }
+.table-school th:nth-child(5), .table-school td:nth-child(5) { width: 25%; }
+
+.table-activity th:nth-child(1), .table-activity td:nth-child(1) { width: 20%; }
+.table-activity th:nth-child(2), .table-activity td:nth-child(2) { width: 20%; }
+.table-activity th:nth-child(3), .table-activity td:nth-child(3) { width: 15%; }
+.table-activity th:nth-child(4), .table-activity td:nth-child(4) { width: 15%; }
+.table-activity th:nth-child(5), .table-activity td:nth-child(5) { width: 15%; }
+.table-activity th:nth-child(6), .table-activity td:nth-child(6) { width: 15%; }
+
+.table-preview th, .table-preview td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Custom Styled Checkbox (with logo color #811d31) */
+.label-checkbox input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #811d31;
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 6px;
+    transition: all 0.2s ease;
+}
+
+.label-checkbox input[type="checkbox"]:checked {
+    background-color: #811d31;
+    border-color: #811d31;
+}
+
+.label-checkbox input[type="checkbox"]:checked::after {
+    content: '✔';
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    left: 3px;
+    top: -1px;
+}
+
+.label-checkbox {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    user-select: none;
+}
+
+.label-checkbox:hover input[type="checkbox"] {
+    border-color: #a32c47; /* lighter shade on hover */
+}
