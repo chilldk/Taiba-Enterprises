@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>TAIBA ENTERPRISES | Exhibition Stall Design Company | Stall Designers Ghaziabad</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TAIBA ENTERPRISES - Premier exhibition stall designers and fabricators in Ghaziabad. We create world-class exhibition booths, trade show displays, and retail kiosks.">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Royal Blue & Gold Color Palette */
+        :root {
+            --primary-dark: #0a1628;
+            --secondary-dark: #1e3a5f;
+            --accent-blue: #2563eb;
+            --accent-gold: #d4af37;
+            --light-bg: #f8f9fa;
+            --text-light: #ffffff;
+            --text-muted: #b0b3b8;
+            --text-accent: #e0e3e8;
+            --gold-gradient: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            --blue-gradient: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        /* Logo */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gold-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .logo-icon::before {
+            content: 'T';
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-light);
+            letter-spacing: 2px;
+            font-family: 'Playfair Display', serif;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-sub {
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .main-nav a {
+            color: var(--text-accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: var(--accent-gold);
+        }
+
+        .main-nav a:hover::after,
+        .main-nav a.active::after {
+            width: 100%;
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .header-phone i {
+            color: var(--accent-gold);
+        }
+
+        .header-cta {
+            background: var(--gold-gradient);
+            color: var(--primary-dark);
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .header-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Slider */
+        .hero-slider {
+            margin-top: 90px;
+            position: relative;
+            height: 650px;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(10, 22, 40, 0.85) 0%, rgba(30, 58, 95, 0.75) 100%);
+        }
+
+        /* Hero Content */
+        .hero-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .hero-title-gold {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 35px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            padding: 16px 35px;
+            background: var(--gold-gradient);
+            color: var(--primary-dark);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-secondary {
+            padding: 16px 35px;
+            background: transparent;
+            color: var(--accent-gold);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-gold);
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: var(--gold-gradient);
+            color: var(--primary-dark);
+            border-color: transparent;
+        }
+
+        /* Enquiry Form */
+        .hero-form {
+            background: rgba(30, 58, 95, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 16px;
+            padding: 35px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .form-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--accent-gold);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 13px 16px;
+            margin-bottom: 14px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            color: var(--text-light);
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .form-input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .form-textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .captcha-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .captcha-text {
+            color: var(--text-accent);
+            font-size: 14px;
+        }
+
+        .captcha-input {
+            width: 80px;
+            margin-bottom: 0;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: var(--gold-gradient);
+            border: none;
+            border-radius: 8px;
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .form-contact-info {
+            margin-top: 16px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .contact-info i {
+            color: var(--accent-gold);
+            margin-right: 6px;
+        }
+
+        /* Slider Navigation */
+        .slider-nav {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 3;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: var(--accent-gold);
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 40px;
+            background: var(--secondary-dark);
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .about-content h2 span {
+            color: var(--accent-gold);
+        }
+
+        .about-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: -20px;
+            bottom: -20px;
+            background: var(--gold-gradient);
+            border-radius: 16px;
+            z-index: -1;
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 100px 40px;
+            background: var(--primary-dark);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 70px;
+        }
+
+        .section-label {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent-gold);
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3px;
+            max-width: 1400px;
+            margin: 0 auto 40px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(10, 22, 40, 0.95) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .portfolio-category {
+            color: var(--accent-gold);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 50px;
+        }
+
+        .page-link {
+            padding: 10px 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 6px;
+            color: var(--text-accent);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .page-link:hover,
+        .page-link.active {
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            border-color: var(--accent-gold);
+        }
+        
+         /* Services Section */
+        .services-section {
+            padding: 100px 40px;
+            background: var(--secondary-dark);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 80px;
+        }
+
+        .section-label {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent-gold);
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--primary-dark);
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gold-gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gold-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 24px;
+            color: var(--primary-dark);
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-dark);
+            padding: 80px 40px 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .footer-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2.5fr 1fr 1fr 1.5fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h3 {
+            font-size: 32px;
+            margin-bottom: 16px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-description {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .footer-contact-item i {
+            color: var(--accent-gold);
+            margin-top: 3px;
+        }
+
+        .footer-section h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 999;
+            text-decoration: none;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-container,
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-nav,
+            .header-contact {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero-text h1 {
+                font-size: 36px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-slider {
+                height: auto;
+                min-height: 600px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo-container">
+                <div class="logo-icon"></div>
+                <div class="logo-text">
+                    <div class="logo-main">TAIBA</div>
+                    <div class="logo-sub">ENTERPRISES</div>
+                </div>
+            </a>
+            
+            <nav class="main-nav">
+                <a href="/" class="active">Home</a>
+                <a href="about">About Us</a>
+                <a href="portfolio">Portfolio</a>
+                <a href="services">Services</a>
+                <a href="contact-us">Contact</a>
+            </nav>
+
+            <div class="header-contact">
+                <a href="tel:09910678006" class="header-phone">
+                    <i class="fas fa-phone"></i>
+                    <span>099106 78006</span>
+                </a>
+                <a href="#quote" class="header-cta">Get Quote</a>
+            </div>
+
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider">
+        <div class="slide active" style="background-image: url('assets/images/portfolio/gallery/stellapps.webp');">
+            <div class="hero-content">
+                <div class="hero-container">
+                    <div class="hero-text">
+                        <h1>
+                            Premium <span class="hero-title-gold">Exhibition Stand</span> Designs That Captivate
+                        </h1>
+                        <p class="hero-subtitle">
+                            TAIBA ENTERPRISES delivers world-class exhibition stand designs and fabrication services 
+                            that transform your brand presence across India.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn-primary">Start Your Project</a>
+                            <a href="portfolio.html" class="btn-secondary">View Portfolio</a>
+                        </div>
+                    </div>
+
+                        <div class="hero-form">
+                            <h3 class="form-title">Request Free Consultation</h3>
+                            <form>
+                                <input type="text" class="form-input" placeholder="Your Name *" required>
+                                <input type="email" class="form-input" placeholder="Email Address *" required>
+                                <input type="tel" class="form-input" placeholder="Phone Number *" required>
+                                <textarea class="form-input form-textarea" placeholder="Tell us about your project..."></textarea>
+                                <button type="submit" class="submit-btn">Get Started</button>
+                            </form>
+                            <div class="contact-info">
+                                <div style="margin-bottom: 8px;"><i class="fas fa-phone"></i> 099106 78006</div>
+                                <div><i class="fas fa-map-marker-alt"></i> A-58, KABERI CITY, Loni Dehat, Ghaziabad</div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" style="background-image: url('assets/images/portfolio/gallery/spxflow.webp');">
+            <div class="hero-content">
+                <div class="hero-container">
+                    <div class="hero-text">
+                        <h1>
+                            Innovative <span class="hero-title-gold">Stall Fabrication</span> & Design Solutions
+                        </h1>
+                        <p class="hero-subtitle">
+                            From concept to completion, we create exhibition stands that leave lasting impressions 
+                            and drive business results.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn-primary">Get Free Consultation</a>
+                            <a href="about.html" class="btn-secondary">Learn More</a>
+                        </div>
+                    </div>
+
+                        <div class="hero-form">
+                            <h3 class="form-title">Request Free Consultation</h3>
+                            <form>
+                                <input type="text" class="form-input" placeholder="Your Name *" required>
+                                <input type="email" class="form-input" placeholder="Email Address *" required>
+                                <input type="tel" class="form-input" placeholder="Phone Number *" required>
+                                <textarea class="form-input form-textarea" placeholder="Tell us about your project..."></textarea>
+                                <button type="submit" class="submit-btn">Get Started</button>
+                            </form>
+                            <div class="contact-info">
+                                <div style="margin-bottom: 8px;"><i class="fas fa-phone"></i> 099106 78006</div>
+                                <div><i class="fas fa-map-marker-alt"></i> A-58, KABERI CITY, Loni Dehat, Ghaziabad</div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide" style="background-image: url('assets/images/portfolio/gallery/khosla-2019.webp');">
+            <div class="hero-content">
+                <div class="hero-container">
+                    <div class="hero-text">
+                        <h1>
+                            Transform Your <span class="hero-title-gold">Brand Experience</span> at Every Event
+                        </h1>
+                        <p class="hero-subtitle">
+                            Expert exhibition stand designers serving Delhi NCR, Ghaziabad, and across India 
+                            with premium quality and on-time delivery.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="contact.html" class="btn-primary">Contact Us Today</a>
+                            <a href="services.html" class="btn-secondary">Our Services</a>
+                        </div>
+                    </div>                   
+                       <div class="hero-form">
+                            <h3 class="form-title">Request Free Consultation</h3>
+                            <form>
+                                <input type="text" class="form-input" placeholder="Your Name *" required>
+                                <input type="email" class="form-input" placeholder="Email Address *" required>
+                                <input type="tel" class="form-input" placeholder="Phone Number *" required>
+                                <textarea class="form-input form-textarea" placeholder="Tell us about your project..."></textarea>
+                                <button type="submit" class="submit-btn">Get Started</button>
+                            </form>
+                            <div class="contact-info">
+                                <div style="margin-bottom: 8px;"><i class="fas fa-phone"></i> 099106 78006</div>
+                                <div><i class="fas fa-map-marker-alt"></i> A-58, KABERI CITY, Loni Dehat, Ghaziabad</div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-nav">
+            <span class="slider-dot active" data-slide="0"></span>
+            <span class="slider-dot" data-slide="1"></span>
+            <span class="slider-dot" data-slide="2"></span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>Exhibition Stand Design Company | <span>Stall Designers Ghaziabad</span></h2>
+                <p>
+                    TAIBA ENTERPRISES is a premier Exhibition Stall Design company with in-house creative stall 
+                    designers & stall makers. We offer unique stall design concepts for your booth.
+                </p>
+                <p>
+                    We undertake turnkey projects of exhibition stall design & stall fabrication. Our in-house stall 
+                    fabricators make turnkey exhibition booths, Expo booths, Event stands, Retail space designs, 
+                    shop-in-shop displays, Airport booths & Shopping Mall booths.
+                </p>
+                <p>
+                    Our exhibition stall designers & exhibition stall contractors make world-class designs with 
+                    the latest trends. Our creative designers work closely with you to develop functional exhibit 
+                    panels and graphic design work for posters in exhibition booths.
+                </p>
+                <p>
+                    Work with an excellent exhibition booth design company to make your event successful. Our 
+                    exhibition booth designers offer services in Delhi NCR, Ghaziabad, Noida, Meerut, and across 
+                    major cities in India.
+                </p>
+            </div>
+
+            <div class="about-image">
+                <img src="assets/images/info_zilvers.webp" alt="Exhibition Stand by TAIBA ENTERPRISES">
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section">
+        <div class="section-header">
+            <span class="section-label">Our Showcase</span>
+            <h2 class="section-title">Recent Exhibition Projects</h2>
+        </div>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="assets/images/portfolio/gallery/stellapps.webp" alt="Exhibition Stand 1">
+                <div class="portfolio-overlay">
+                    <h3 class="portfolio-title">STELLAPPS</h3>
+                    <p class="portfolio-category">Dairy Association Conference 2020</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="assets/images/portfolio/gallery/spxflow.webp" alt="Exhibition Stand 2">
+                <div class="portfolio-overlay">
+                    <h3 class="portfolio-title">SPXFLOW</h3>
+                    <p class="portfolio-category">Industrial Exhibition</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="assets/images/portfolio/gallery/national-2020.webp" alt="Exhibition Stand 3">
+                <div class="portfolio-overlay">
+                    <h3 class="portfolio-title">NATIONAL POLYPLAST</h3>
+                    <p class="portfolio-category">Ice Cream Expo 2019</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="assets/images/portfolio/gallery/thm-stf.webp" alt="Exhibition Stand 4">
+                <div class="portfolio-overlay">
+                    <h3 class="portfolio-title">THM (STF)</h3>
+                    <p class="portfolio-category">EXCON 2019</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="assets/images/portfolio/gallery/nch.webp" alt="Exhibition Stand 5">
+                <div class="portfolio-overlay">
+                    <h3 class="portfolio-title">NCH</h3>
+                    <p class="portfolio-category">Poultry Show 2019</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="assets/images/portfolio/gallery/khosla-2019.webp" alt="Exhibition Stand 6">
+                <div class="portfolio-overlay">
+                    <h3 class="portfolio-title">KHOSLA PROFIL</h3>
+                    <p class="portfolio-category">Techtextil 2019</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="assets/images/portfolio/gallery/swastik-pipes.webp" alt="Exhibition Stand 7">
+                <div class="portfolio-overlay">
+                    <h3 class="portfolio-title">SWASTIK PIPES</h3>
+                    <p class="portfolio-category">Kisan 2019</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="assets/images/portfolio/gallery/rieco.webp" alt="Exhibition Stand 8">
+                <div class="portfolio-overlay">
+                    <h3 class="portfolio-title">RIECO INDUSTRIES</h3>
+                    <p class="portfolio-category">Indus Food Tech 2020</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <img src="assets/images/portfolio/gallery/miantic.webp" alt="Exhibition Stand 9">
+                <div class="portfolio-overlay">
+                    <h3 class="portfolio-title">MIANTIC</h3>
+                    <p class="portfolio-category">Smart Home Expo 2019</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <a href="#" class="page-link">First</a>
+            <a href="#" class="page-link">Prev</a>
+            <a href="#" class="page-link active">1</a>
+            <a href="portfolio.html" class="page-link">2</a>
+            <a href="portfolio.html" class="page-link">3</a>
+            <a href="portfolio.html" class="page-link">Next</a>
+            <a href="portfolio.html" class="page-link">Last</a>
+        </div>
+    </section>
+
+       <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="section-header">
+            <span class="section-label">What We Offer</span>
+            <h2 class="section-title">Premium Exhibition Solutions</h2>
+            <p class="section-description">
+                From concept to completion, we deliver comprehensive exhibition services tailored to your brand
+            </p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-pen-ruler"></i>
+                </div>
+                <h3>Custom Stand Design</h3>
+                <p>
+                    Innovative, bespoke exhibition stand designs that perfectly reflect your brand identity 
+                    and engage your target audience with creative excellence.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>Expert Fabrication</h3>
+                <p>
+                    Premium quality construction using the latest materials and techniques, ensuring 
+                    durability, visual impact, and flawless execution.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-store"></i>
+                </div>
+                <h3>Retail & Kiosk Solutions</h3>
+                <p>
+                    Eye-catching retail displays and kiosks for malls, airports, and events that drive 
+                    customer engagement and boost sales.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <h3>Turnkey Solutions</h3>
+                <p>
+                    Complete project management from design to installation, including logistics, 
+                    transportation, and on-site setup services.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3>Graphics & Branding</h3>
+                <p>
+                    Professional graphic design and branding services that communicate your message 
+                    with clarity, style, and visual impact.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>24/7 Support</h3>
+                <p>
+                    Dedicated support team available throughout your exhibition journey, ensuring 
+                    smooth execution and peace of mind.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>TAIBA ENTERPRISES</h3>
+                <p class="footer-description">
+                    Leading exhibition stand designers and fabricators in North India, creating memorable 
+                    brand experiences that drive results.
+                </p>
+                <div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>099106 78006</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>A-58, KABERI CITY, Loni Dehat, Ghaziabad, Uttar Pradesh 201102</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@taibaenterprises.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="services.html">Exhibition Stand Design</a></li>
+                    <li><a href="services.html">Stall Fabrication</a></li>
+                    <li><a href="services.html">Mall Kiosks</a></li>
+                    <li><a href="services.html">Airport Booths</a></li>
+                    <li><a href="services.html">Retail Displays</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Service Areas</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Ghaziabad</a></li>
+                    <li><a href="#">Delhi NCR</a></li>
+                    <li><a href="#">Noida</a></li>
+                    <li><a href="#">Greater Noida</a></li>
+                    <li><a href="#">Meerut</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 TAIBA ENTERPRISES. All Rights Reserved. | Exhibition Stand Designers Ghaziabad</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919910678006" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Hero Slider
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            currentSlide = (n + slides.length) % slides.length;
+            
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        // Auto advance slides
+        setInterval(nextSlide, 5000);
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+    </script>
+
+</body>
+
+</html>
